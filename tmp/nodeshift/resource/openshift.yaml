@@ -1,0 +1,103 @@
+apiVersion: v1
+kind: List
+items:
+  - apiVersion: apps.openshift.io/v1
+    kind: DeploymentConfig
+    metadata:
+      name: ivanov
+      namespace: ummnh-research-stations
+      labels:
+        project: ivanov
+        version: 0.1.0
+        provider: nodeshift
+        app: ivanov
+        app.kubernetes.io/name: nodejs
+        app.kubernetes.io/component: ivanov
+        app.kubernetes.io/instance: ivanov
+        app.openshift.io/runtime: nodejs
+      annotations:
+        nodeshift/git-branch: main
+        nodeshift/git-commit: d2878f9a192fccc62113a65a87757a288c3d3976
+    spec:
+      replicas: 1
+      revisionHistoryLimit: 2
+      selector:
+        app: ivanov
+        project: ivanov
+        provider: nodeshift
+      triggers:
+        - type: ConfigChange
+        - type: ImageChange
+          imageChangeParams:
+            automatic: true
+            containerNames:
+              - ivanov
+            from:
+              kind: ImageStreamTag
+              namespace: ummnh-research-stations
+              name: 'ivanov:latest'
+      template:
+        metadata:
+          labels:
+            project: ivanov
+            version: 0.1.0
+            provider: nodeshift
+            app: ivanov
+          annotations:
+            nodeshift/git-branch: main
+            nodeshift/git-commit: d2878f9a192fccc62113a65a87757a288c3d3976
+        spec:
+          containers:
+            - image: ivanov
+              name: ivanov
+              securityContext:
+                privileged: false
+              ports:
+                - containerPort: 8080
+                  name: http
+                  protocol: TCP
+              env: []
+  - apiVersion: v1
+    kind: Service
+    spec:
+      type: ClusterIP
+      selector:
+        project: ivanov
+        provider: nodeshift
+      ports:
+        - protocol: TCP
+          port: 8080
+          targetPort: 8080
+          name: http
+    metadata:
+      name: ivanov
+      namespace: ummnh-research-stations
+      labels:
+        project: ivanov
+        version: 0.1.0
+        provider: nodeshift
+        app.kubernetes.io/name: nodejs
+        app.kubernetes.io/component: ivanov
+        app.kubernetes.io/instance: ivanov
+        app.openshift.io/runtime: nodejs
+      annotations:
+        nodeshift/git-branch: main
+        nodeshift/git-commit: d2878f9a192fccc62113a65a87757a288c3d3976
+  - apiVersion: route.openshift.io/v1
+    kind: Route
+    spec:
+      to:
+        kind: Service
+        name: ivanov
+      port:
+        targetPort: 8080
+    metadata:
+      name: ivanov
+      labels:
+        project: ivanov
+        version: 0.1.0
+        provider: nodeshift
+        app.kubernetes.io/name: nodejs
+        app.kubernetes.io/component: ivanov
+        app.kubernetes.io/instance: ivanov
+        app.openshift.io/runtime: nodejs
