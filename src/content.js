@@ -30,7 +30,7 @@ export default {
     {
       title: "Meet Valeriy Ivanov",
       text: `Valeriy Ivanov, PhD, is Associate Professor in the Department of Civil and Environmental Engineering at the University of Michigan.\nSupported by the National Science Foundation.`,
-      video: "https://youtu.be/lJrYeFYx374"
+      video: "https://youtu.be/_zVO8-x9fB4"
     },
     {
       title: "Field Site Location",
@@ -43,7 +43,7 @@ export default {
     {
       title: "Measuring Water in the Arctic",
       text: `Ivanov and his team of collaborators began installing "Energy Budget Stations" in the Urals in 2018 and collected the first set of data in 2019.`,
-      video: "https://youtu.be/SkPWHAVNrDs"
+      video: "https://youtu.be/3QxSJcVsmyM"
     },
     {
       title: "Energy Budget Stations",
@@ -56,22 +56,22 @@ export default {
     {
       title: "A Day in the Field with Ivanov",
       text: `Follow Ivanov on a typical day in the field in the Siberian Arctic.`,
-      video: "https://youtu.be/RLhZPQvi49o"
+      video: "https://youtu.be/nuPWYkOWm7g"
     },
     {
       title: "The Maddening Insects",
       text: `You might not think working in the Arctic would involve mosquitos. Could you survive?`,
-      video: "https://youtu.be/tldCeizYY-0"
+      video: "https://youtu.be/UIqY3X6-NLQ"
     },
     {
       title: "Computer Models",
       text: `After data is collected from the field, Ivanov creates computer models with his team of students. These models add to our understanding of climate change, now and in the future.`,
-      video: "https://youtu.be/1Ev-G6q3eAg"
+      video: "https://youtu.be/oqe_RjmyeLw"
     },
     {
       title: "Climate Change and Choices We Make",
       text: `However small, the local actions we take impact our future climate.`,
-      video: "https://youtu.be/o656vybxdkI"
+      video: "https://youtu.be/maXW1WhID_0"
     }
   ],
   // Secondary Content
