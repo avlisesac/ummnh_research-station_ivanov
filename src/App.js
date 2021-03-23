@@ -10,7 +10,7 @@ import Footer from "./components/Footer";
 import VideoComponent from "./components/VideoComponent";
 import TextComponent from "./components/TextComponent";
 import ButtonStack from "./components/ButtonStack";
-import Links from "./components/Links";
+// import Links from "./components/Links";
 import Header from "./components/Header";
 
 import "bootstrap/dist/css/bootstrap.min.css"
@@ -48,7 +48,7 @@ export default function App() {
             <ExtraContent />
 
             {/* Links */}
-            <Links content={content} />
+            {/* <Links content={content} /> */}
 
             <hr />
             {/* Footer */}
