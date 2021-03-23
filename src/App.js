@@ -25,7 +25,7 @@ export default function App() {
     <div className="App">
       <Container fluid>
         <Row>
-          <Col lg={{ span: 10, offset: 1 }}>
+          <Col>
             {/* Header */}
             <Header title={content.page.title} />
 
